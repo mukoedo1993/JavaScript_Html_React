@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Web app lifestyle
+        </title>
+        <style>
+            #first {color: green;}
+            #second {color:red;}
+        </style>
+    </head>
+    <body>
+        <ul id="first"></ul>
+        <script>
+            function addMessage(element,message)
+            {
+                var messageElement = document.createElement("li");
+                messageElement.textContent=message;
+                element.appendChild(messageElement);
+            }
+            var first = document.getElementById("first");
+            addMessage(first,"Page loading");
+        </script>
+
+        <ul id="second"></ul>
+
+        <script>
+            document.body.addEventListener("mousemove",function() {
+                var second = document.getElementById("second");
+                addMessage(second, "Event: mousemove");
+            });
+
+            document.body.addEventListener("click",function(){
+                var second = document.getElementById("second");
+                addMessage(second, "Event : click");
+            });
+        </script>
+    </body>
+</html>
+
+<!--
+Listing 2.1 first defines two CSS rules, #first and #second, that specify the text color
+for the elements with the IDs first and second (so we can easily distinguish between them).
+We continue by defining a list element with the id first: 
+
+-->
+
+<!--
+    addMessage function:
+    when invoked:
+    1: Create a new list item element
+    2: Set its text content
+    3: And appends it to an existing element.
+    
+-->
+<!--
+    document.createElement()
+    In an HTML document, the document.createElement() method creates 
+    the HTML element specified by tagName, 
+    or an HTMLUnknownElement if tagName isn't recognized.
+-->
+<!--
+     Node.textContent:
+     The textContent property of the Node interface represents the text 
+     content of the node and its descendants.
+-->
+<!--
+    Node.appendChild():
+    The Node.appendChild() method adds a node to the 
+    end of the list of children of a specified parent node.
+-->
+
+
+
+<!--
+    Finally we attach two event handlers to the body of the web page. We 
+    start with the mousemove event handler, which is executed every time the user
+    moves the mouse, and adds a message "Event: mousemove" to the second list element
+    by calling the addMessage function
+-->
+<!--
+    document.body.addEventListener(type, listener [, options])
+    addEventListener() works by adding a function or an object that implements EventListener to the list of event listeners for the 
+    specified event type on the EventTarget on which it's called.
+-->
+<!--
+    document.getElementById(id)
+    The Document method getElementById() returns an Element object representing the
+     element whose id property matches the specified id.
+-->
+
+
+<!--
+    CONCLUSION:
+    The page-building phase starts with the browser receiveing the HTML code, which is 
+    used as a base on top of which the browser builds the page's UI. The browser does this
+    by parsing the HTML code, one HTML element at a time, and building a DOM, a structured representation
+    of the HTML page in which every HTML element is represented as a NODE.
+-->

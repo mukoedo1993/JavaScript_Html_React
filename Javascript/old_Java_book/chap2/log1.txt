@@ -1,0 +1,38 @@
+(base) zcw@mukoedo1993:~/JavaScript_Html_React_clone/JavaScript_Html_React/HTML$ nodejs
+> a
+Thrown:
+ReferenceError: a is not defined
+> var a
+undefined
+> var b=a;
+undefined
+> #
+Thrown:
+#
+^
+
+SyntaxError: Invalid or unexpected token
+> //hehe
+undefined
+> \\hehe
+Thrown:
+\\hehe
+^
+
+SyntaxError: Invalid or unexpected token
+> log.console('nimasile')
+Thrown:
+ReferenceError: log is not defined
+> console.log('nimasile')
+nimasile
+undefined
+> quit()
+Thrown:
+ReferenceError: quit is not defined
+> quit
+Thrown:
+ReferenceError: quit is not defined
+> 
+(To exit, press ^C again or type .exit)
+> .exit
+(base)
